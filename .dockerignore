@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+.env*
+!.env.example
+.DS_Store
+sample_prds
+tests
+docs
+scripts
+AGENTS.md
+CLAUDE.md
+README.md

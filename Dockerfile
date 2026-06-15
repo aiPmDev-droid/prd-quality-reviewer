@@ -13,7 +13,9 @@ RUN npm ci
 # Copy source
 COPY . .
 
-# Build the Next.js app
+# Build the Next.js app (DOCKER_BUILD triggers standalone output)
+ARG DOCKER_BUILD=true
+ENV DOCKER_BUILD=${DOCKER_BUILD}
 RUN npm run build
 
 # ---- Production stage ----
