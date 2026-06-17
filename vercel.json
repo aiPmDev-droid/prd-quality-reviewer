@@ -4,6 +4,7 @@
   "outputDirectory": ".next",
   "installCommand": "npm ci",
   "env": {
-    "GEMINI_API_KEY": "@gemini-api-key"
+    "GEMINI_API_KEY": "@gemini-api-key",
+    "GEMINI_MODEL": "@gemini-model"
   }
 }

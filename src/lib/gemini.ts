@@ -15,9 +15,15 @@ function getClient(): GoogleGenerativeAI {
   return genAI;
 }
 
+function getModelName(): string {
+  return process.env.GEMINI_MODEL || "gemini-2.0-flash";
+}
+
 export async function reviewPRD(prdText: string): Promise<string> {
   const ai = getClient();
-  const model = ai.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const modelName = getModelName();
+  console.log(`[PRD Reviewer] Using model: ${modelName}`);
+  const model = ai.getGenerativeModel({ model: modelName });
 
   const prompt = `You are an expert Product Manager reviewing a Product Requirements Document (PRD).
 Review the PRD below using the **SMART criteria** and return ONLY valid JSON (no markdown fences, no extra text).
