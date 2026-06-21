@@ -2,7 +2,13 @@
 
 An AI-powered tool that scores Product Requirements Documents against the **SMART framework** — Specific, Measurable, Achievable, Relevant, and Time-bound.
 
-Built with Next.js 16, Google Gemini 2.0 Flash, and Tailwind CSS.
+Built with Next.js 16, Google Gemini 2.5 Flash, and Tailwind CSS.
+
+## Demo
+
+![PRD Quality Reviewer Demo](demo/prd-reviewer-demo.gif)
+
+*Paste a PRD → click Review → get SMART scores with per-criterion reasoning and suggestions.*
 
 ## Features
 
