@@ -118,6 +118,26 @@ async function main() {
     await sleep(300);
     await captureScreenshot(page, "06-smart-breakdown");
 
+    // Step 7-11: Show each individual criterion card
+    console.log("7️⃣  Showing each SMART criterion...");
+    const criteria = [
+      { label: "Specific", color: "blue" },
+      { label: "Measurable", color: "purple" },
+      { label: "Achievable", color: "teal" },
+      { label: "Relevant", color: "orange" },
+      { label: "Time-bound", color: "pink" },
+    ];
+
+    for (let i = 0; i < criteria.length; i++) {
+      const c = criteria[i];
+      const card = page.locator(`text="${c.label}"`).first();
+      if (await card.count() > 0) {
+        await card.scrollIntoViewIfNeeded();
+        await sleep(400);
+        await captureScreenshot(page, `07-${i + 1}-${c.label.toLowerCase()}`);
+      }
+    }
+
     // Step 7: Take a full-page screenshot for reference
     const fullPagePath = path.join(OUTPUT_DIR, "demo-fullpage.png");
     await page.screenshot({ path: fullPagePath, fullPage: true });
